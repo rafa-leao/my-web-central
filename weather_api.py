@@ -34,9 +34,9 @@ class WeatherAPI:
 
         # If you get confuse at this data extraction, see how the response is in the documentation:
         # http://apiadvisor.climatempo.com.br/doc/index.html#api-Forecast-Forecast72HoursByCity
-        json_id = json_response['data'][0]['temperature']['temperature']
+        json_temperature = json_response['data'][0]['temperature']['temperature']
 
-        return json_id
+        return json_temperature
 
     def forecast_data(self):
 
@@ -46,9 +46,9 @@ class WeatherAPI:
 
             json_response = r.json()
 
-            json_id = json_response
+            json_all_data = json_response
 
-            return json_id
+            return json_all_data
 
 
 id_from_SP = WeatherAPI().state_id('São Paulo', 'SP')
