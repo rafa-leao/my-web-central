@@ -41,16 +41,17 @@ class WeatherAPI:
 
         return json_temperature
 
-    def forecast_data(self):
-
-            url_forecast_info = '/api/v1/forecast/locale/{}/hours/72?token={}'.format(self.__sao_paulo_id, self.__token)
-
-            r = requests.get(self.__default_api_url + url_forecast_info)
-
-            json_response = r.json()
-            json_all_data = json_response
-
-            return json_all_data
+    # def forecast_data(self):
+    #
+    #         url_forecast_info = '/api/v1/forecast/locale/{}/hours/72?token={}'
+    #         .format(self.__sao_paulo_id, self.__token)
+    #
+    #         r = requests.get(self.__default_api_url + url_forecast_info)
+    #
+    #         json_response = r.json()
+    #         json_all_data = json_response
+    #
+    #         return json_all_data
 
 
 temperature = WeatherAPI().temperature_now()
