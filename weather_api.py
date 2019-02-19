@@ -1,5 +1,7 @@
 import requests
 
+import time
+
 
 class WeatherAPI:
     def __init__(self,
@@ -19,22 +21,23 @@ class WeatherAPI:
         r = requests.get(self.__default_api_url + url_state_info)
 
         json_response = r.json()
-
         json_id = json_response[0]['id']
 
         return json_id
 
     def temperature_now(self):
 
-        url_forecast_info = '/api/v1/forecast/locale/{}/hours/72?token={}'.format(self.__sao_paulo_id, self.__token)
+        # get just the hour from a str_time()
+        time_now = time.localtime()[3]
 
+        url_forecast_info = '/api/v1/forecast/locale/{}/hours/72?token={}'.format(self.__sao_paulo_id, self.__token)
         r = requests.get(self.__default_api_url + url_forecast_info)
 
         json_response = r.json()
-
         # If you get confuse at this data extraction, see how the response is in the documentation:
         # http://apiadvisor.climatempo.com.br/doc/index.html#api-Forecast-Forecast72HoursByCity
-        json_temperature = json_response['data'][0]['temperature']['temperature']
+
+        json_temperature = json_response['data'][time_now]['temperature']['temperature']
 
         return json_temperature
 
@@ -45,17 +48,10 @@ class WeatherAPI:
             r = requests.get(self.__default_api_url + url_forecast_info)
 
             json_response = r.json()
-
             json_all_data = json_response
 
             return json_all_data
 
 
-id_from_SP = WeatherAPI().state_id('São Paulo', 'SP')
-print("O ID de São Paulo é: {}".format(id_from_SP))
-
-temperatura_de_agora = WeatherAPI().temperature_now()
-print("A temperatura é de {}ºC".format(temperatura_de_agora))
-
-all_data = WeatherAPI().forecast_data()
-print(all_data)
+temperature = WeatherAPI().temperature_now()
+print(temperature)
