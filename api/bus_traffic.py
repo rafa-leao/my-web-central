@@ -47,7 +47,8 @@ class BusAPI:
 
         json_response = r.json()
 
-        return json_response
+        # Yes, confusing. Look the response: http://www.sptrans.com.br/desenvolvedores/APIOlhoVivo/Documentacao.aspx?1#docApi-previsao
+        return json_response['p']['l'][0]['vs'][0]['t']
 
 
 x = BusAPI().arrival_forecast(650005666, 932)
