@@ -9,7 +9,7 @@ class BusAPI:
         self.__token = token
         self.__default_api_url = default_api_url
 
-    def line_id(self, line_supposition):
+    def bus_line_id(self, line_supposition):
 
         # Makes the authentication and catch its cookies
         url_authentication = '/Login/Autenticar?token={}'.format(self.__token)
@@ -17,9 +17,9 @@ class BusAPI:
         cookies = r.cookies
 
         # Here is where the method really happens
-        url_line = '/Linha/Buscar?termosBusca={}'.format(line_supposition)
+        url_bus_line = '/Linha/Buscar?termosBusca={}'.format(line_supposition)
 
-        r = requests.get(self.__default_api_url + url_line, cookies=cookies)
+        r = requests.get(self.__default_api_url + url_bus_line, cookies=cookies)
 
         json_response = r.json()
 
@@ -32,7 +32,7 @@ class BusAPI:
         return lines
 
     # The line and stop id are not precise. If wanted this specific information, create a method each one
-    def arrival_forecast(self, stop_id, line_id):
+    def arrival_forecast(self, bus_stop_id, bus_line_id):
         # 650005666 -> my stop_id
 
         # Makes the authentication and catch its cookies
@@ -41,13 +41,14 @@ class BusAPI:
         cookies = r.cookies
 
         # Here is where the method really happens
-        url_arrival_forecast = '/Previsao?codigoParada={}&codigoLinha={}'.format(stop_id, line_id)
+        url_arrival_forecast = '/Previsao?codigoParada={}&codigoLinha={}'.format(bus_stop_id, bus_line_id)
 
         r = requests.get(self.__default_api_url + url_arrival_forecast, cookies=cookies)
 
         json_response = r.json()
 
-        # Yes, confusing. Look the response: http://www.sptrans.com.br/desenvolvedores/APIOlhoVivo/Documentacao.aspx?1#docApi-previsao
+        # Yes, confusing.
+        # Look the response: http://www.sptrans.com.br/desenvolvedores/APIOlhoVivo/Documentacao.aspx?1#docApi-previsao
         return json_response['p']['l'][0]['vs'][0]['t']
 
 
