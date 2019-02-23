@@ -9,8 +9,31 @@ class BusAPI:
         self.__token = token
         self.__default_api_url = default_api_url
 
-    # The line and stop id are not precise. If wanted this specific information, create a method for that
+    def line_id(self, line_supposition):
+
+        # Makes the authentication and catch its cookies
+        url_authentication = '/Login/Autenticar?token={}'.format(self.__token)
+        r = requests.post(self.__default_api_url + url_authentication)
+        cookies = r.cookies
+
+        # Here is where the method really happens
+        url_line = '/Linha/Buscar?termosBusca={}'.format(line_supposition)
+
+        r = requests.get(self.__default_api_url + url_line, cookies=cookies)
+
+        json_response = r.json()
+
+        # Every line has two ids
+        line_id_1 = json_response[0]['cl']
+        line_id_2 = json_response[1]['cl']
+
+        lines = [line_id_1, line_id_2]
+
+        return lines
+
+    # The line and stop id are not precise. If wanted this specific information, create a method each one
     def arrival_forecast(self, stop_id, line_id):
+        # 650005666 -> my stop_id
 
         # Makes the authentication and catch its cookies
         url_authentication = '/Login/Autenticar?token={}'.format(self.__token)
@@ -25,3 +48,7 @@ class BusAPI:
         json_response = r.json()
 
         return json_response
+
+
+x = BusAPI().arrival_forecast(650005666, 932)
+print(x)
