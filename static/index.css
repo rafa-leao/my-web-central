@@ -28,4 +28,21 @@
 			.weather-now,
 			.bus-arrival {
 				font-size: 3.5em;
+
+				display: inline-block;
+			}
+				.weather-now {
+					color: #1b88e2;
+
+					margin-bottom: .2em;
+				}
+
+			.table {
+				font-size: 1.3em;
+
+				border: solid 1px black;
+				border-radius: 5px;
+
+				border-collapse: separate;
+				border-spacing: .9em .2em; 
 			}
