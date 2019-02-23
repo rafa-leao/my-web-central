@@ -23,7 +23,7 @@ class BusAPI:
 
         json_response = r.json()
 
-        # Every line has two ids
+        # Every bus line has two ids
         line_id_1 = json_response[0]['cl']
         line_id_2 = json_response[1]['cl']
 
@@ -31,9 +31,9 @@ class BusAPI:
 
         return lines
 
-    # The line and stop id are not precise. If wanted this specific information, create a method each one
     def arrival_forecast(self, bus_stop_id, bus_line_id):
         # 650005666 -> my stop_id
+        # 932       -> my line_id to vl. matilde
 
         # Makes the authentication and catch its cookies
         url_authentication = '/Login/Autenticar?token={}'.format(self.__token)
@@ -50,7 +50,3 @@ class BusAPI:
         # Yes, confusing.
         # Look the response: http://www.sptrans.com.br/desenvolvedores/APIOlhoVivo/Documentacao.aspx?1#docApi-previsao
         return json_response['p']['l'][0]['vs'][0]['t']
-
-
-x = BusAPI().arrival_forecast(650005666, 932)
-print(x)
