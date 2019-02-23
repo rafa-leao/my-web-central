@@ -1,0 +1,31 @@
+/* index - content */
+
+	.content {
+		max-width: 765px;
+		margin: 0 auto;
+	}
+
+	.weather,
+	.bus-time{
+		padding: 1em;
+		margin-bottom: 2em;
+	} 
+		.weather-content,
+		.bus-time-content {
+			text-align: left;
+
+			padding: .5em;
+
+			border: solid 1px black;
+		}
+			.main-subtitle {
+				font-size: 1.5em;
+
+				margin-bottom: 1em;
+				padding: .2em 0;
+			}
+
+			.weather-now,
+			.bus-arrival {
+				font-size: 3.5em;
+			}
