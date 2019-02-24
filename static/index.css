@@ -44,5 +44,11 @@
 				border-radius: 5px;
 
 				border-collapse: separate;
-				border-spacing: .9em .2em; 
+				border-spacing: .9em .5em;
 			}
+			    .temperature-info {
+
+			        font-weight: bold;
+
+			        color: #1b88e2;
+			    }
