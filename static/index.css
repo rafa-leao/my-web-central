@@ -7,8 +7,8 @@
 
 	.weather,
 	.bus-time{
-		padding: 1em;
-		margin-bottom: 2em;
+		padding: 0 1em 1em;
+		margin-bottom: 1em;
 	} 
 		.weather-content,
 		.bus-time-content {
@@ -19,26 +19,34 @@
 			border: solid 1px black;
 		}
 			.main-subtitle {
-				font-size: 1.5em;
+				font-size: 2.5em;
 
-				margin-bottom: 1em;
+				margin-bottom: .5em;
 				padding: .2em 0;
 			}
 
-			.weather-now,
-			.bus-arrival {
-				font-size: 3.5em;
-
-				display: inline-block;
+			.subtitle {
+				font-size: 1.3em;
+				margin-bottom: .2em;
 			}
-				.weather-now {
-					color: #1b88e2;
 
-					margin-bottom: .2em;
+			.bus-arrival {
+				font-size: 1.5em;
+				margin: 0 0 .3em .5em;
+			}
+				.bus-line {
+					color: #ffc83d;
 				}
 
+			.weather-now {
+				font-size: 3em;
+				color: #1b88e2;
+				margin-bottom: .2em;
+				display: inline-block;
+			}
+
 			.table {
-				font-size: 1.3em;
+				font-size: 1.15em;
 
 				border: solid 1px black;
 				border-radius: 5px;

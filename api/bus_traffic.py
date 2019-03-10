@@ -32,8 +32,13 @@ class BusAPI:
         return lines
 
     def arrival_forecast(self, bus_stop_id, bus_line_id):
-        # 650005666 -> my stop_id
-        # 932       -> my line_id to vl. matilde
+        # my stop_id
+            # 650005666
+        # my line_id to metro vl. matilde
+            # 932
+            # 390
+        # my line_id to metro penha
+            # 929
 
         # Makes the authentication and catch its cookies
         url_authentication = '/Login/Autenticar?token={}'.format(self.__token)

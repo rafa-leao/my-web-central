@@ -52,12 +52,26 @@
 
 				<article class="bus-time-content">
 
-					<h2 class="main-subtitle">Bus Arrival</h2>
+					<h2 class="main-subtitle">Bus Arrivals</h2>
 
-					<span class="bus-arrival">{{ bus_arrival }} Hrs</span>
+					<h3 class="subtitle">Metrô VL.Matilde</h3>
+					<ul>
+
+						<!-- I'll iterate upon bus_arrival later-->
+
+						<li class="bus-arrival">
+							<span class="bus-line">2719-10:</span>{{ bus_arrival }} Hrs</li>
+
+						<li class="bus-arrival">
+							<span class="bus-line">273N-10:</span> {{ bus_arrival }} Hrs</li>
+
+					</ul>
+
 				</article>
 			</section>
+
 		</main>
+
 		<footer class="footer">
 			<div class="footer-wrapper">
 				<span>See the source code on 
@@ -65,5 +79,6 @@
 				</span>
 			</div>
 		</footer>
+
 	</body>
 </html>
