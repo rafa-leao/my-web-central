@@ -2,8 +2,8 @@ from flask import Flask, render_template
 
 import time
 
-import api.weather
-import api.bus_traffic
+from api.weather import WeatherAPI
+from api.bus_traffic import BusAPI
 
 app = Flask(__name__)
 
@@ -11,10 +11,10 @@ app = Flask(__name__)
 @app.route('/')
 def index():
 
-    weather_info = api.weather.WeatherAPI()
+    weather_info = WeatherAPI()
     temperature_now = weather_info.temperature_now()
 
-    bus_info = api.bus_traffic.BusAPI()
+    bus_info = BusAPI()
     bus_arrival = bus_info.arrival_forecast(650005666, 932)
 
     time_now = time.localtime()[3]
