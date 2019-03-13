@@ -30,25 +30,37 @@ def buses_arrivals():
     return buses
 
 
+def temperatures_to_one_hour_later():
+
+    weather_info = WeatherAPI()
+
+    time_now = time.localtime()[3]
+
+    return [weather_info.temperature(time_now+1),
+            weather_info.temperature(time_now+2),
+            weather_info.temperature(time_now+3),
+            weather_info.temperature(time_now+4)]
+
+
+def hours_later():
+
+    time_now = time.localtime()[3]
+
+    return [time_now + 1,
+            time_now + 2,
+            time_now + 3,
+            time_now + 4]
+
+
 @app.route('/')
 def index():
 
     weather_info = WeatherAPI()
     temperature_now = weather_info.temperature_now()
 
-    time_now = time.localtime()[3]
-
-    one_hour_later = [time_now + 1,
-                      time_now + 2,
-                      time_now + 3,
-                      time_now + 4]
-
-    temperature_to_one_hour_later = [weather_info.temperature(time_now+1),
-                                     weather_info.temperature(time_now+2),
-                                     weather_info.temperature(time_now+3),
-                                     weather_info.temperature(time_now+4)]
-
+    one_hour_later = hours_later()
     bus_arrival = buses_arrivals()
+    temperature_to_one_hour_later = temperatures_to_one_hour_later()
 
     return render_template('index.html',
                            temperature_now=temperature_now,
