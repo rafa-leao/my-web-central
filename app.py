@@ -8,6 +8,23 @@ from api.bus_traffic import BusAPI
 app = Flask(__name__)
 
 
+@app.route('/')
+def index():
+
+    weather_info = WeatherAPI()
+    temperature_now = weather_info.temperature_now()
+
+    one_hour_later = hours_later()
+    bus_arrival = buses_arrivals()
+    temperature_to_one_hour_later = temperatures_to_one_hour_later()
+
+    return render_template('index.html',
+                           temperature_now=temperature_now,
+                           bus_arrival=bus_arrival,
+                           one_hour_later=one_hour_later,
+                           temperature_to_one_hour_later=temperature_to_one_hour_later)
+
+
 def buses_arrivals():
 
     bus_info = BusAPI()
@@ -50,23 +67,6 @@ def hours_later():
             time_now + 2,
             time_now + 3,
             time_now + 4]
-
-
-@app.route('/')
-def index():
-
-    weather_info = WeatherAPI()
-    temperature_now = weather_info.temperature_now()
-
-    one_hour_later = hours_later()
-    bus_arrival = buses_arrivals()
-    temperature_to_one_hour_later = temperatures_to_one_hour_later()
-
-    return render_template('index.html',
-                           temperature_now=temperature_now,
-                           bus_arrival=bus_arrival,
-                           one_hour_later=one_hour_later,
-                           temperature_to_one_hour_later=temperature_to_one_hour_later)
 
 
 app.run(debug=True)
