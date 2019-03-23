@@ -14,35 +14,27 @@ def index():
     weather_info = WeatherAPI()
     temperature_now = weather_info.temperature_now()
 
-    one_hour_later = hours_later()
-    bus_arrival = buses_arrivals()
-    temperature_to_one_hour_later = temperatures_to_one_hour_later()
-
     return render_template('index.html',
                            temperature_now=temperature_now,
-                           bus_arrival=bus_arrival,
-                           one_hour_later=one_hour_later,
-                           temperature_to_one_hour_later=temperature_to_one_hour_later)
+                           bus_arrival=buses_arrivals(),
+                           one_hour_later=hours_later(),
+                           temperature_to_one_hour_later=temperatures_to_one_hour_later())
 
 
 def buses_arrivals():
 
     bus_info = BusAPI()
 
-    # These are buses a take to go to subway station at morning
+    # These are buses I take to go to subway station at morning
 
+    # sptrans is not giving the metro_penha information today, so try other day :c
+    #
+    # bus_metro_penha = bus_info.arrival_forecast(650005666, 929)
     bus_metro_vl_matilde_1 = bus_info.arrival_forecast(650005666, 932)
     bus_metro_vl_matilde_2 = bus_info.arrival_forecast(650005666, 390)
 
-    # sptrans is not giving the metro penha information today, so try other day :c
-    #
-    # bus_metro_penha = bus_info.arrival_forecast(650005666, 929)
-    #   buses = [bus_metro_vl_matilde_1,
-    #            bus_metro_vl_matilde_2,
-    #            bus_metro_penha]
-
-    buses = [bus_metro_vl_matilde_1,
-             bus_metro_vl_matilde_2]
+    buses = {"bus1": bus_metro_vl_matilde_1,
+             "bus2": bus_metro_vl_matilde_2}
 
     return buses
 
@@ -69,4 +61,5 @@ def hours_later():
             time_now + 4]
 
 
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
