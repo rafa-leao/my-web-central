@@ -33,12 +33,12 @@ class BusAPI:
 
     def arrival_forecast(self, bus_stop_id, bus_line_id):
         # my stop_id
-            # 650005666
+        # --- 650005666
         # my line_id to metro vl. matilde
-            # 932
-            # 390
+        # --- 932
+        # --- 390
         # my line_id to metro penha
-            # 929
+        # --- 929
 
         # Makes the authentication and catch its cookies
         url_authentication = '/Login/Autenticar?token={}'.format(self.__token)
@@ -52,6 +52,6 @@ class BusAPI:
 
         json_response = r.json()
 
-        # Yes, confusing.
-        # Look the response: http://www.sptrans.com.br/desenvolvedores/APIOlhoVivo/Documentacao.aspx?1#docApi-previsao
-        return json_response['p']['l'][0]['vs'][0]['t']
+        buses_arrival = json_response['p']['l'][0]['vs'][0]['t']
+
+        return buses_arrival
