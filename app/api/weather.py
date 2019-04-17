@@ -21,9 +21,9 @@ class WeatherAPI:
         r = requests.get(self.__default_api_url + url_state_info)
 
         json_response = r.json()
-        json_id = json_response[0]['id']
 
-        return json_id
+        return json_response[0]['id']
+        
 
     def temperature(self, hour):
 
@@ -36,9 +36,8 @@ class WeatherAPI:
 
         # If you get confuse at this data extraction, see how the response is in the documentation:
         # http://apiadvisor.climatempo.com.br/doc/index.html#api-Forecast-Forecast72HoursByCity
-        json_temperature = json_response['data'][hour]['temperature']['temperature']
+        return json_response['data'][hour]['temperature']['temperature']
 
-        return json_temperature
 
     def temperature_now(self):
 
@@ -52,6 +51,4 @@ class WeatherAPI:
 
         # If you get confuse at this data extraction, see how the response is in the documentation:
         # http://apiadvisor.climatempo.com.br/doc/index.html#api-Forecast-Forecast72HoursByCity
-        json_temperature = json_response['data'][time_now]['temperature']['temperature']
-
-        return json_temperature
+        return json_response['data'][time_now]['temperature']['temperature']

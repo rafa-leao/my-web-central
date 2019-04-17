@@ -27,9 +27,7 @@ class BusAPI:
         line_id_1 = json_response[0]['cl']
         line_id_2 = json_response[1]['cl']
 
-        lines = [line_id_1, line_id_2]
-
-        return lines
+        return [line_id_1, line_id_2]
 
     def arrival_forecast(self, bus_stop_id, bus_line_id):
         # my stop_id
@@ -52,6 +50,4 @@ class BusAPI:
 
         json_response = r.json()
 
-        buses_arrival = json_response['p']['l'][0]['vs'][0]['t']
-
-        return buses_arrival
+        return json_response['p']['l'][0]['vs'][0]['t']
