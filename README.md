@@ -1,13 +1,18 @@
-ENG_SUB
+#My_web_central
 
-The idea is make a web central to recieve usefull data, as weather forecast, what time the bus will be in the bus stop and news.
+##What?
+The idea is make a web central to receive useful data, as weather forecast, what time my bus will be in the bus stop and news.
 
-At first, it might be usefull just for me.
+At first, it might be useful just for me.
 
----
+##How do I run it?
 
-PT_SUB
+This project use Flask to render the view, and for now, that's all.
 
-A idéia é criar uma central através da web para receber dados úteis como previsão do tempo, quando o ônibus chega ao ponto e notícias. 
+So set it up is pretty simple:
+- Clone this repository;
+- Create a [Virtualenv](https://virtualenv.pypa.io/en/latest/) and activate it;
+- Install the requirements ```pip3 install -r requirements.txt```
+- Run the file ```app.py```
 
-Por hora, o site será útil apenas pra mim.
+This simple app should be running!
