@@ -1,4 +1,6 @@
-from api import *
+from api import weather
+from api import bus_traffic
+
 
 import time
 
