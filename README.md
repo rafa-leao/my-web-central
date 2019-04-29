@@ -1,11 +1,11 @@
-#My_web_central
+# My_web_central
 
-##What?
+## What?
 The idea is make a web central to receive useful data, as weather forecast, what time my bus will be in the bus stop and news.
 
 At first, it might be useful just for me.
 
-##How do I run it?
+## How do I run it?
 
 This project use Flask to render the view, and for now, that's all.
 
