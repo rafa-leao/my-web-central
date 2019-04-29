@@ -1,5 +1,4 @@
-from api.weather import WeatherAPI
-from api.bus_traffic import BusAPI
+from api import *
 
 import time
 
@@ -9,7 +8,7 @@ import time
 
 def buses_arrivals():
 
-    bus_info = BusAPI()
+    bus_info = bus_traffic.BusAPI()
 
     # These are buses I take to go to subway station at morning!
 
@@ -30,12 +29,12 @@ def buses_arrivals():
 
 def temperature_now():
 
-    return WeatherAPI().temperature_now()
+    return weather.WeatherAPI().temperature_now()
 
 
 def temperatures_to_one_hour_later():
 
-    weather_info = WeatherAPI()
+    weather_info = weather.WeatherAPI()
 
     time_now = time.localtime()[3]
 
