@@ -1,6 +1,9 @@
 from flask import Flask, render_template
 
-from utils import utils
+from utils.temperature_now import temperature_now
+from utils.buses_arrivals import buses_arrivals
+from utils.hours_later import hours_later
+from utils.temperatures_to_one_hour_later import temperatures_to_one_hour_later
 
 app = Flask(__name__)
 
@@ -9,10 +12,10 @@ app = Flask(__name__)
 def index():
 
     return render_template('index.html',
-                           temperature_now=utils.temperature_now(),
-                           bus_arrival=utils.buses_arrivals(),
-                           one_hour_later=utils.hours_later(),
-                           temperature_to_one_hour_later=utils.temperatures_to_one_hour_later())
+                           temperature_now=temperature_now(),
+                           bus_arrival=buses_arrivals(),
+                           one_hour_later=hours_later(),
+                           temperature_to_one_hour_later=temperatures_to_one_hour_later())
 
 
 if __name__ == "__main__":
