@@ -1,8 +1,8 @@
 from flask import Flask, render_template
 
-from utils.temperature_now import temperature_now
-from utils.buses_arrivals import buses_arrivals
 from utils.hours_later import hours_later
+from utils.buses_arrivals import buses_arrivals
+from utils.temperature_now import temperature_now
 from utils.temperatures_to_one_hour_later import temperatures_to_one_hour_later
 
 app = Flask(__name__)
