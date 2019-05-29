@@ -3,7 +3,6 @@
 
 	body {
 		font-family: 'Montserrat', sans-serif;
-		margin-bottom: 1em;
 		background-color: #f9fbfd;
 	}
 
@@ -13,16 +12,20 @@
 		cursor: pointer;
 	}
 
+	img {
+		max-width: 100%;
+
+		border-radius: 2px;
+	}
+
 /*header*/
 
 	.main-title {
 		font-size: 2em;
+		font-weight: bold;
 		text-align: center;
 
-		padding: .5em;
-		margin-bottom: .7em;
-
-		border-bottom: solid 1px black;
+		margin: .7em;
 	}
 
 /*footer*/

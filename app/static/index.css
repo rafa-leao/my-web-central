@@ -1,62 +1,116 @@
 /* index - content */
 
 	.content {
-		max-width: 765px;
+		max-width: 725px;
 		margin: 0 auto;
 	}
 
-	.weather,
-	.bus-time{
-		padding: 0 1em 1em;
-		margin-bottom: 1em;
-	} 
-		.weather-content,
-		.bus-time-content {
-			text-align: left;
+	.main-subtitle {
+		font-size: 2.5em;
 
-			padding: .5em;
+		text-align: center;
+
+		margin-bottom: .5em;
+		padding: .2em 0;
+	}
+
+	.subtitle {
+		font-size: 1.3em;
+		margin-bottom: .2em;
+	}
+
+	.weather,
+	.bus-time,
+	.news {
+		padding: 0 1em 1em;
+		margin-bottom: .7em;
+	} 
+
+	.weather-content,
+	.bus-time-content,
+	.news-content {
+		text-align: left;
+		padding: .5em;
+		box-shadow: 4px 4px 20px 0 rgba(120,135,182,.2);
+	}
+
+	.weather-wrapper,
+	.bus-time-wrapper {
+		max-width: 90%;
+		margin: 0 auto;
+	}
+
+/*news wise*/
+	.news-article {
+		padding: .5em;
+		border: solid 1px lightgrey;
+		border-radius: 4px;
+	}
+		.news-article figure {
+			text-align: center;
+		}
+
+		.news-article span {
+			font-size: 13px;
+			display: block;
+		}
+
+		.news-article .news-publisher {
+			margin: 0 0 .3em 0;
+		}
+
+		.news-article .news-publishe-at {
+			opacity: .5;
+
+			margin: 0 0 1em 0;
+		}
+
+		.news-article .news-title {
+			font-size: 1.1em;
+			font-weight: bold;
+			text-align: center;
+			margin: .5em 0 1em;
+		}
+
+		.news-article p {
+			text-align: center;
+			line-height: 1.1;
+			margin: 0 0 1em 0;
+		}
+
+		.news-url-content {
+			text-align: left;
+			color: black;
+			opacity: .5;
+		}
+
+/*bus wise*/
+	.bus-arrival {
+		font-size: 1.5em;
+		margin: 0 0 .3em .5em;
+	}
+		.bus-line {
+			color: #ffc83d;
+		}
+
+/*weather wise*/
+	.weather-now {
+		font-size: 3em;
+		color: #1b88e2;
+		margin-bottom: .2em;
+		display: inline-block;
+	}
+
+		.table {
+			font-size: 1.15em;
 
 			border: solid 1px black;
+			border-radius: 5px;
+
+			border-collapse: separate;
+			border-spacing: .9em .5em;
 		}
-			.main-subtitle {
-				font-size: 2.5em;
-
-				margin-bottom: .5em;
-				padding: .2em 0;
-			}
-
-			.subtitle {
-				font-size: 1.3em;
-				margin-bottom: .2em;
-			}
-
-			.bus-arrival {
-				font-size: 1.5em;
-				margin: 0 0 .3em .5em;
-			}
-				.bus-line {
-					color: #ffc83d;
-				}
-
-			.weather-now {
-				font-size: 3em;
-				color: #1b88e2;
-				margin-bottom: .2em;
-				display: inline-block;
-			}
-
-			.table {
-				font-size: 1.15em;
-
-				border: solid 1px black;
-				border-radius: 5px;
-
-				border-collapse: separate;
-				border-spacing: .9em .5em;
-			}
-			    .temperature-info {
-
-			        font-weight: bold;
-
-			        color: #1b88e2;
-			    }
+		    .temperature-info {
+		        font-weight: bold;
+		        color: #1b88e2;
+		    }

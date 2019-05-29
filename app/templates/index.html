@@ -22,48 +22,84 @@
 			
 			<section class="weather">
 
-				<article class="weather-content">
+				<div class="weather-content">
 
 					<h2 class="main-subtitle">Weather Forecast</h2>
 
-					<span class="weather-now"> Now ~{{ temperature_now }}°C </span>
+					<div class="weather-wrapper">
+						<span class="weather-now"> Now ~{{ temperature_now }}°C </span>
 
-					<table class="table">
-						<tbody>
-							<tr class="time-info">
-								{% for hour in one_hour_later %}
-										<td>{{ hour }}hrs</td>
-								{% endfor %}
+						<table class="table">
+							<tbody>
+								<tr class="time-info">
+									{% for hour in one_hour_later %}
+											<td>{{ hour }}hrs</td>
+									{% endfor %}
 
-							</tr>
-							<tr class="temperature-info">
-								{% for temperature in temperature_to_one_hour_later %}
-									<td>{{ temperature }}°C</td>
-								{% endfor %}
+								</tr>
+								<tr class="temperature-info">
+									{% for temperature in temperature_to_one_hour_later %}
+										<td>{{ temperature }}°C</td>
+									{% endfor %}
 
-							</tr>
-						</tbody>
-					</table>
-
-				</article>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</section>
 
 			<section class="bus-time">
 
-				<article class="bus-time-content">
+				<div class="bus-time-content">
 
 					<h2 class="main-subtitle">Bus Arrivals</h2>
 
-					<h3 class="subtitle">Metrô VL.Matilde</h3>
-					<ul>
+					<div class="bus-time-wrapper">
 
-						<li class="bus-arrival">
-							<span class="bus-line">2719-10:</span>{{bus_arrival.bus1}} Hrs</li>
-						<li class="bus-arrival">
-							<span class="bus-line">273N-10:</span> {{bus_arrival.bus2}} Hrs</li>
-					</ul>
+						<h3 class="subtitle">Metrô VL.Matilde</h3>
+						<ul>
 
-				</article>
+							<li class="bus-arrival">
+								<span class="bus-line">2719-10:</span>{{bus_arrival.bus1}} Hrs</li>
+							<li class="bus-arrival">
+								<span class="bus-line">273N-10:</span> {{bus_arrival.bus2}} Hrs</li>
+						</ul>
+
+					</div>
+				</div>
+			</section>
+
+			<section class="news">
+				
+				<div class="news-content">
+					
+
+					<h2 class="main-subtitle">Latest News</h2>
+
+					<article class="news-article">
+
+						<figure>
+							<img src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fprod-upp-image-read.ft.com%2Fe0963360-8179-11e9-a7f0-77d3101896ec?source=next-opengraph&fit=scale-down&width=900">
+						</figure>
+
+						<span class="news-publisher">
+							Financial Times
+						</span>
+
+						<span class="news-publishe-at">
+							2019-05-28
+						</span>
+
+						<h3 class="news-title">Brussels insists Brexit deal will not be renegotiated</h3>
+
+						<p class="news-description">May underlines the need for compromise at EU summit</p>
+
+						<a class="news-url-content">Goes to article content</a>
+
+					</article>
+
+				</div>
 			</section>
 
 		</main>
@@ -71,7 +107,7 @@
 		<footer class="footer">
 			<div class="footer-wrapper">
 				<span>See the source code on 
-					<a href="https://github.com/rafa-leao/my-news-central" target="_blank">My GitHub</a>
+					<a href="https://github.com/rafa-leao/my-news-central" target="_blank">GitHub</a>
 				</span>
 			</div>
 		</footer>
