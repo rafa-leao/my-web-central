@@ -1,17 +1,25 @@
 # my_web_central
 
-The idea is make a web central to receive useful data, as weather forecast, what time my bus will be in the bus stop and news.
+This app show me: weather forecast, what time my bus will be in the stop and Brazilian trending news.
 
-At first, it might be useful just for me.
+The bus data is useful just for me! If you want change be aware that this data is provided by the [Brazilian transit company](http://www.sptrans.com.br/desenvolvedores/). 
 
-## How do I run it?
+It's really a personal app!
+
+## APIs I used for this project
+
+- [A weather API](http://apiadvisor.climatempo.com.br/doc) from a Brazillian company;
+- [The NewsApi](https://newsapi.org/docs/);
+- [Brazilian transit company](http://www.sptrans.com.br/desenvolvedores/api-do-olho-vivo-guia-de-referencia/). 
+
+## How do I run it? (Not deployed yet)
 
 This project use Flask to render the view, and for now, that's all.
 
 So set it up is pretty simple:
 - Clone this repository;
 - Create a [Virtualenv](https://virtualenv.pypa.io/en/latest/) and activate it;
-- Install the requirements ```pip3 install -r requirements.txt```
+- Install the requirements ```pip install -r requirements.txt```
 - Run the file ```app.py```
 
 This simple app should be running!
