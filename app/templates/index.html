@@ -97,16 +97,17 @@
 								{{ piece_of_news.publishedAt }}
 							</span>
 
-							<h3 class="news-title">{{ piece_of_news.title }}</h3>
+							<h3 class="news-title">
+								<a href="{{ piece_of_news.url }}">{{ piece_of_news.title }}</a>
+							</h3>
 
 							<p class="news-description">{{ piece_of_news.description }}</p>
-
-							<a class="news-url-content">{{ piece_of_news.url }}</a>
 
 						</article>
 
 					{% endfor %}
 
+					<span>Powered by <a href="https://newsapi.org">NewsApi.org</a></span>
 				</div>
 			</section>
 

@@ -42,9 +42,11 @@
 
 /*news wise*/
 	.news-article {
-		padding: .5em;
 		border: solid 1px lightgrey;
 		border-radius: 4px;
+
+		padding: .5em;
+		margin: 0 0 .5em 0;
 	}
 		.news-article figure {
 			text-align: center;
@@ -78,12 +80,6 @@
 			margin: 0 0 1em 0;
 		}
 
-		.news-url-content {
-			text-align: left;
-			color: black;
-			opacity: .5;
-		}
-
 /*bus wise*/
 	.bus-arrival {
 		font-size: 1.5em;
@@ -108,7 +104,7 @@
 			border-radius: 5px;
 
 			border-collapse: separate;
-			border-spacing: .9em .5em;
+			border-spacing: .5em;
 		}
 		    .temperature-info {
 		        font-weight: bold;
