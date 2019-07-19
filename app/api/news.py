@@ -1,5 +1,6 @@
 from newsapi import NewsApiClient
 
+
 class NewsAPI:
 
 	def __init__(self, 
@@ -13,11 +14,4 @@ class NewsAPI:
 
 		newsapi = NewsApiClient(self.__api_key)
 
-		top_headlines = newsapi.get_top_headlines(self.__country)
-
-		return top_headlines
-
-
-x = NewsAPI().top_headlines()
-
-print(x)
+		return newsapi.get_top_headlines(country=self.__country)
