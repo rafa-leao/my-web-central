@@ -2,7 +2,7 @@ from api.weather import WeatherAPI
 
 import time
 
-def temperatures_to_one_hour_later():
+def temperature_to_one_hour_later():
 
     time_now = time.localtime()[3]
 
