@@ -10,7 +10,7 @@ It's really a personal app!
 
 - [A weather API](http://apiadvisor.climatempo.com.br/doc) from a Brazillian company;
 - [The NewsApi](https://newsapi.org/docs/);
-- [Brazilian transit company](http://www.sptrans.com.br/desenvolvedores/api-do-olho-vivo-guia-de-referencia/). 
+- Traffic info from a [Brazilian transit company](http://www.sptrans.com.br/desenvolvedores/api-do-olho-vivo-guia-de-referencia/). 
 
 ## How do I run it? (Not deployed yet)
 
