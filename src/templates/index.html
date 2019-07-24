@@ -86,11 +86,7 @@
 							</figure>
 
 							<span class="news-publisher">
-								{% if piece_of_news.source.id == "None" %}
-									{{ piece_of_news.source.name }}
-								{% else %}								
-									{{ piece_of_news.source.id }}
-								{% endif %}
+								{{ piece_of_news.source.name }}
 							</span>
 
 							<span class="news-publishe-at">
