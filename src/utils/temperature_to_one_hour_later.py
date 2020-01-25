@@ -1,4 +1,4 @@
-from api.weather import WeatherAPI
+from apis_client.weather import WeatherAPI
 
 import time
 

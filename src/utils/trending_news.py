@@ -1,4 +1,4 @@
-from api.news import NewsAPI
+from apis_client.news import NewsAPI
 
 
 def news():

@@ -1,4 +1,4 @@
-from api.bus_traffic import BusAPI
+from apis_client.bus_traffic import BusAPI
 
 
 def buses_arrivals():

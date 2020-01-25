@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 
-from api.weather import WeatherAPI
+from apis_client.weather import WeatherAPI
 
 from utils.trending_news import news
 from utils.hours_later import hours_later
