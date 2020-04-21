@@ -14,7 +14,7 @@ It's really a personal app!
 
 ## How do I run it? (Not deployed yet)
 
-*Made with [flask](https://flask.palletsprojects.com/en/1.1.x/)*
+*It was made with [flask](https://flask.palletsprojects.com/en/1.1.x/)*
 
 Set it up is pretty simple:
 - Clone this repository;
